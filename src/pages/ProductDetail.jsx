@@ -79,11 +79,14 @@ import { useNavigate } from "react-router-dom"
         {quant}
         <Button  onClick={()=>setQuant(quant+1)}>+</Button>
       </div>
-     
-        <Row>
-        <Carousel fade>
+      
+      <Carousel>
       <Carousel.Item>
-        
+        <img
+          className="d-block w-100"
+          src="holder.js/800x400?text=First slide&bg=373940"
+          alt="First slide"
+        />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -92,10 +95,9 @@ import { useNavigate } from "react-router-dom"
       <Carousel.Item>
       <img
           className="d-block w-100"
-          src={detail?.images[1].url}
+          src="{detail?.images[0].url}"
           alt="Third slide"
-        /> 
-      
+        />
 
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -105,9 +107,9 @@ import { useNavigate } from "react-router-dom"
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={detail?.images[2].url}
+          src="{detail?.images[1].url}"
           alt="Third slide"
-        /> 
+        />
 
         <Carousel.Caption>
           <h3>Third slide label</h3>
@@ -116,12 +118,14 @@ import { useNavigate } from "react-router-dom"
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-      
+      <img
+          className="d-block w-100"
+          src="{detail?.images[2].url}"
+          alt="Third slide"
+        />
     </Carousel>
-    </Row>
 
-      
-
+        
       <Col>
         <h3>Related Products</h3>
         <ListGroup >
