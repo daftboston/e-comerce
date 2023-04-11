@@ -95,7 +95,7 @@ import { useNavigate } from "react-router-dom"
       <Carousel.Item>
       <img
           className="d-block w-100"
-          src="{detail?.images[0].url}"
+          src={detail?.images?.[0].url}
           alt="Third slide"
         />
 
@@ -107,7 +107,7 @@ import { useNavigate } from "react-router-dom"
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="{detail?.images[1].url}"
+          src={detail?.images?.[1].url}
           alt="Third slide"
         />
 
@@ -120,7 +120,7 @@ import { useNavigate } from "react-router-dom"
       </Carousel.Item>
       <img
           className="d-block w-100"
-          src="{detail?.images[2].url}"
+          src={detail?.images?.[2].url}
           alt="Third slide"
         />
     </Carousel>
