@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/*
+p-5 {
+  padding : 3rem;
+  py  padding en el eje y superio e inferior
+  px en el eje x 
+}*/
+
