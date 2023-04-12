@@ -8,6 +8,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import {  filterCategoriesThunk, filterProductThunk } from "../store/slices/product.slice"
 import { addProductThunk } from "../store/slices/cart.slice"
 import { useNavigate } from "react-router-dom"
+import Card from 'react-bootstrap/Card';
+
+
 
 
  const ProductDetail = () => {
@@ -67,64 +70,70 @@ import { useNavigate } from "react-router-dom"
 
     return( 
     <div>
-        <h1>{detail?.title}</h1>
-        <h2>category : {detail?.categoryId}</h2>
+        
+       
 
-        <p>{detail?.description}</p>
-        <h4>price : {detail?.price}</h4>
-        <Button onClick={addToCart}>add to cart</Button>
-
-      <div className="mb-3">        
-        <Button  onClick={()=>setQuant(quant-1)}>-</Button>
-        {quant}
-        <Button  onClick={()=>setQuant(quant+1)}>+</Button>
-      </div>
-      
-      <Carousel>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
+        <Card style={{ width: '50rem' }}>
+      <Card.Img variant="top" src="" />
+      <Carousel>       
       <Carousel.Item>
       <img
           className="d-block w-40"
+          style={{height:250}}
           src={detail?.images?.[0].url}
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
+          alt="First slide"
+        />      
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-40"
+          style={{height:250}}
           src={detail?.images?.[1].url}
-          alt="Third slide"
+          alt="Second slide"
         />
 
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
       </Carousel.Item>
+      <Carousel.Item>
+
       <img
-          className="d-block w-40"
+          className="d-block w-10"
+          style={{height:250}}
           src={detail?.images?.[2].url}
           alt="Third slide"
         />
+        </Carousel.Item>
     </Carousel>
 
+
+
+      <Card.Body>
+        <Card.Title>{detail?.title}</Card.Title>
+        <Card.Text>
+        {detail?.description}
+        </Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+     
+        <ListGroup.Item> $ {detail?.price}</ListGroup.Item>
+        
+      </ListGroup>
+      <Card.Body>
+      <Button onClick={addToCart}>add to cart</Button>
+
+<div className="mb-3">        
+  <Button  onClick={()=>setQuant(quant-1)}>-</Button>
+  {quant}
+  <Button  onClick={()=>setQuant(quant+1)}>+</Button>
+</div>
+        
+      </Card.Body>
+    </Card>
+
+
+
+
+      
+      
         
       <Col>
         <h3>Related Products</h3>
